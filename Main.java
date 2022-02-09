@@ -12,6 +12,8 @@ public class Main {
         task2();
         //Составить алгоритм: на входе есть числовой массив, необходимо вывести элементы массива кратные 3
         task3();
+        System.out.println("variant 2");
+        task3_1(new int[]{2, 3, 8, 12, 18});
     }
 
     public static void task1 (){
@@ -45,12 +47,20 @@ public class Main {
                 if ((num % 3) == 0 && (num != 0)) {
                     System.out.println(num);
                 }
-            } catch (Exception ex) {
+            } catch (NumberFormatException e){}
+            catch (Exception ex) {
                 double num1 = Double.parseDouble(arr[i]);
                 if ((num1 % 3) == 0 && (num1 != 0)) {
                     System.out.println(num1);
                 }
             }
+        }
+    }
+    public static void task3_1 (int[] mas) {
+        for (int i = 0; i < mas.length; i++) {
+            if ((mas[i] % 3) == 0 && (mas[i] != 0)) {
+                    System.out.println(mas[i]);
+                }
         }
     }
 }
